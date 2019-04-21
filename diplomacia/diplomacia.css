@@ -1,0 +1,42 @@
+body
+{
+	width: 765px;
+	background-color: #D3B788;
+	font-family: "Book Antiqua","Bookman","Georgia","Times New Roman",serif;
+	text-align: justify;
+}
+
+em
+{
+	font-variant: small-caps;
+}
+
+.cabecalho div
+{
+	font-weight: normal;
+	font-family: "Courier New","Courier",mono-spaced;
+	font-size: 26px;
+	text-align: right;
+	color: #990000;
+}
+
+.cabecalho img
+{
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+.verbete
+{
+	font-style: italic;
+}
+
+.verbete em
+{
+	font-weight: bold;
+}
+
+.verbete div
+{
+	text-align: right;
+}

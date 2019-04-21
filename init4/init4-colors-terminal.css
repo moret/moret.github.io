@@ -1,0 +1,93 @@
+body
+{
+	background-color: #000000;
+}
+
+.caixa
+{
+	border-color: #008800;
+}
+
+.caixa-cabecalho
+{
+	color: #000000;
+	background-color: #00aa00;
+}
+
+.caixa-conteudo
+{
+}
+
+.caixa-conteudo a, .caixa-conteudo a:visited, .caixa-conteudo a:hover
+{
+	color: #00ff00;
+}
+
+.marcadores
+{
+	border-color: #008800;
+}
+
+.marcador-cabecalho
+{
+	color: #000000;
+	background-color: #00aa00;
+}
+
+.marcador a, .marcador a:visited
+{
+	color: #00ff00;
+	background-color: #000000;
+}
+
+.marcador a:hover
+{
+	background-color: #004400;
+}
+
+.trocadores
+{
+	border-color: #008800;
+}
+
+.trocador-cabecalho
+{
+	color: #000000;
+	background-color: #00aa00;
+}
+
+.trocador a, .trocador a:visited
+{
+	color: #00ff00;
+	background-color: #000000;
+}
+
+#conteudo
+{
+	color: #00ff00;
+	background-color: #000000;
+}
+
+#coluna-principal
+{
+}
+
+#coluna-lateral
+{
+}
+
+#rodape
+{
+	border-color: #008800;
+}
+
+#rodape a, #rodape a:visited
+{
+	color: #00ff00;
+	background-color: #000000;
+}
+
+#rodape a:hover
+{
+	background-color: #004400;
+}

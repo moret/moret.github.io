@@ -1,0 +1,5 @@
+body {  text-align: justify; background-color: #FFF5E6; background-image: url(imagens/fundo.jpg)}
+a:link,a:visited {  text-decoration: none; color: #000000}
+a:hover {  color: #0000FF; text-decoration: underline}
+textarea {  font-family: Tahoma, Verdana, Arial}
+input {  font-family: Tahoma, Verdana, Arial}

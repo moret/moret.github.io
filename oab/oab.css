@@ -1,0 +1,106 @@
+body
+{
+	background: url("imagens/fundo.jpg");
+	font-family: "BitStream Vera Sans","Verdana","Arial",sans-serif;
+}
+
+a
+{
+	color: blue;
+}
+
+table
+{
+	table-layout: fixed;
+}
+
+.titulo
+{
+	background-color: #000099;
+	color: #ffffff;
+	font-weight: bold;
+	padding: 10px;
+	font-size: 12px;
+}
+
+.navegacao
+{
+	background-color: #00247e;
+	color: #cae2ff;
+	padding: 10px;
+	text-align: right;
+	font-size: 12px;
+}
+
+.navegacao a
+{
+	color: #cae2ff;
+}
+
+.conteudo
+{
+	background-color: #cae2ff;
+	color: #00247e;
+	padding: 10px;
+	font-size: 12px;
+}
+
+.conteudo-titulo
+{
+	font-weight: bold;
+	padding-top: 15px;
+	text-align: center;
+}
+
+.conteudo-texto
+{
+	padding-top: 15px;
+	text-align: justify;
+}
+
+.imagem
+{
+	padding-top: 15px;
+	font-weight: bold;
+	text-align:center;
+}
+
+.destaque
+{
+	background-color: #00247e;
+	color: #ffffff;
+	padding: 10px;
+	font-size: 12px;
+}
+
+.destaque-titulo
+{
+	font-weight: bold;
+	padding-top: 15px;
+	text-align: center;
+}
+
+.destaque-texto
+{
+	padding-top: 15px;
+	text-align: justify;
+	font-style: italic;
+}
+
+.celula-impar
+{
+	background-color: #eeeeee;
+}
+
+.celula-par
+{
+}
+
+.rodape
+{
+	background-color: #b0c4de;
+	color: #000080;
+	padding: 10px;
+	text-align: center;
+	font-size: 12px;
+}

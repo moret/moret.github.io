@@ -1,0 +1,195 @@
+<!-- MAIN CONTENT -->
+
+<script type="text/javascript" src="passwordmaker.js">
+</script>
+
+<script type="text/javascript" src="md4.js">
+</script>
+
+<script type="text/javascript" src="md5.js">
+</script>
+
+<script type="text/javascript" src="sha256.js">
+</script>
+
+<script type="text/javascript" src="sha1.js">
+</script>
+
+<script type="text/javascript" src="ripemd160.js">
+</script>
+
+<script type="text/javascript" src="l33t.js">
+</script>
+
+<script type="text/javascript" src="cookie.js">
+</script>
+
+<script type="text/javascript" src="aes.js">
+</script>
+
+<script type="text/javascript" src="sarissa.js">
+</script>
+
+<script type="text/javascript">
+  window.onload = init;
+  window.onunload = destroy;
+</script>
+
+<h5 class="page-header">on-line passwordmaker - use this when you can't use the extension</h5>
+
+<table cellpadding="10"><tr><td>Tested with:</td>
+<td>
+  <table border="1">
+    <tr><td>Firefox 1.0.x</td><td>Internet Explorer 5.0, 6.0</td></tr>
+    <tr><td>Mozilla 1.7.5</td><td>Opera 7.54u2</td></tr>
+    <tr><td>Netscape 7.2</td><td>Konqueror 3.3 (no cookie support)</td></tr>
+  </table>
+</td>
+<td width="300">If you've tried this page with another browser or browser version, please <a href="http://s11.invisionfree.com/PasswordMaker/">let us know!</a></td>
+</tr>
+<tr><td colspan="2">&nbsp;</td></tr>
+<tr><td colspan="2">You can <a href="passwordmaker-online.zip">download</a> this page and its dependencies as a zip archive, runnable from your local hard drive. Simply expand the zip archive and open passwordmaker.html in a browser.</td></tr>
+</table>
+
+<form>
+
+<table border="1">
+<tr><td>
+<table cellspacing="5" cellpadding="5">
+  
+  <tr>
+    <td width="200"><a href="help.html#master-password">Master password</a></td>
+    <td>
+      <input type="password" id="passwdMaster" type="password" onchange="generatepassword();" onkeyup="generatepassword();" onkeydown="generatepassword();" onkeypress="generatepassword();" oninput="generatepassword();"/>
+    </td>
+  </tr>
+
+  <tr>
+    <td><a href="help.html#save-master-password">Save master password</a> <b>(stored as an encrypted cookie on your PC)</b></td>
+    <td>
+      <input type="checkbox" id="saveMasterPasswordCB";/>
+    </td>
+  </tr>
+
+  <tr>
+    <td><a href="help.html#use-l33t">Use l33t</a></td>
+    <td>
+      <select id="whereLeetLB" onchange="toggleWhereLeetLB();generatepassword();">
+        <option value="off">not at all</option>
+        <option value="before-hashing">before generating password</option>
+        <option value="after-hashing">after generating password</option>
+        <option value="both">before and after generating password</option>
+      </select>
+    </td>
+  </tr>
+
+  <tr>
+    <td><a href="help.html#l33t-level">l33t Level</a></td>
+    <td>
+      <select id="leetLevelLB" onchange="generatepassword();">
+        <option value="0">1</option>
+        <option value="1">2</option>
+        <option value="2">3</option>
+        <option value="3">4</option>
+        <option value="4">5</option>
+        <option value="5">6</option>
+        <option value="6">7</option>
+        <option value="7">8</option>
+        <option value="8">9</option>
+      </select>
+    </td>
+  </tr>
+
+  <tr>
+    <td><a href="help.html#hash-algorithm">Hash Algorithm</a></td>
+    <td>
+      <select id="hashAlgorithmLB" onchange="generatepassword();">
+        <!-- <option value="makeHashKeyByConcatenation">None</option> -->
+        <option value="hex_md4">MD4</option>
+        <option value="hex_hmac_md4">HMAC-MD4</option>
+        <option value="hex_md5">MD5</option>
+        <option value="hex_hmac_md5">HMAC-MD5</option>
+        <option value="hex_sha1">SHA-1</option>
+        <option value="hex_sha256">SHA-256</option>
+        <option value="hex_rmd160">RIPEMD-160</option>
+      </select>
+    </td>
+  </tr>
+
+  <tr>
+    <td><a href="help.html#url-components">URL Components</a></td>
+    <td>
+      <table border="1">
+        <tr>
+          <td>
+            <input type="checkbox" id="protocolCB" onclick="populateURL();">Protocol</input><br/>
+            <input type="checkbox" id="subdomainCB" onclick="populateURL();">Subdomain(s)</input><br/>
+            <input type="checkbox" id="domainCB" onclick="populateURL();">Domain</input><br/>
+            <input type="checkbox" id="pathCB" onclick="populateURL();">Port, path, anchor, query parameters</input><br/>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <tr>
+    <td><a href="help.html#url">URL</a></td>
+    <td><input type="edit" id="passwdUrl" onchange="generatepassword();" onkeyup="generatepassword();" onkeydown="generatepassword();" onkeypress="generatepassword();" oninput="generatepassword();"/></td>
+  </tr>
+
+  <tr>
+    <td><a href="help.html#length-of-generated-password">Length of Generated Password</a></td>
+    <td><input id="passwdLength"
+				maxlength="3"
+				size="3"
+        value="8"
+        onchange="if (/\D/.test(this.value)) this.value='8';generatepassword();" onkeyup="if (/\D/.test(this.value)) this.value='8';generatepassword();" onkeydown="if (/\D/.test(this.value)) this.value='8';generatepassword();" onkeypress="if (/\D/.test(this.value)) this.value='8';generatepassword();" oninput="if (/\D/.test(this.value)) this.value='8';generatepassword();"/>
+  </tr>
+
+  <tr>
+    <td><img src="images/new.jpg"/>Username</td>
+    <td><input id="usernameTB" onchange="generatepassword();" onkeyup="generatepassword();" onkeydown="generatepassword();" onkeypress="generatepassword();" oninput="generatepassword();"/>
+  </tr>
+
+  <tr>
+    <td><img src="images/new.jpg"/>Counter</td>
+    <td><input id="counter" onchange="generatepassword();" onkeyup="generatepassword();" onkeydown="generatepassword();" onkeypress="generatepassword();" oninput="generatepassword();"/>
+  </tr>
+
+  <tr>
+    <td><a href="help.html#generated-password">Generated Password</a></td>
+    <td><input type="edit" id="passwdGenerated" style="color: blue; font-weight: bold"/></td>
+  </tr>
+
+  <tr>
+    <td align="right"><input type="button" value="Import Preferences" onclick="alert('Coming Soon');"></td>
+    <td align="left"><input type="button" value="  Help  " onclick="location.href='help.html';"></td>
+  </tr>
+
+</td></tr>
+</table>
+<tr><td width="700">
+<h5>Is This Page Secure?</h5>
+<p>
+This page uses only javascript and html to generate passwords. There is no form
+submission -- purposefully -- so there is no way for the server
+to see or store your passwords (including the master). It would be a security risk to send passwords over an HTTP
+(not HTTPS) connection, and also to store them whatsoever (even encrypted) on a server; not to
+mention a violation of your privacy.<br/><br/>All settings except the master password are stored on your local PC as a cookie, so the settings will be the same next time you visit this page. If you'd like to store the master password also, check the <a href="help.html#save-master-password">Save master password</a> checkbox. The master password will then be stored <b>encrypted</b> as an cookie on your local machine. Saving the master password, even though it's encrypted with AES encryption, is not completely secure; you are sacrificing some security for convenience. Theoretically, a hacker could determine your master password if he:
+<ol>
+<li>Could access the encrypted master password and key, stored as cookie, on your PC</li>
+<li>Knew which <a href="help.html#use-l33t">l33t</a> level you're using (if any)</li>
+<li>Knew to use AES-128 to decrypt the master password</li>
+</ol>
+<br/>
+Even then, a hacker wouldn't be able to use the master password to login anywhere if you only
+use generated passwords for your website accounts. Don't forget, he'd also need to know your username(s) on any of those websites.
+<br/><br/>In any case, if this security risk concerns you, you
+shouldn't check the "Save master password" checkbox. If you've checked it by mistake, simply clear your cookies or, alternatively, uncheck the <a href="help.html#save-master-password">Save master password</a> box and navigate away from this page. This forces an empty value to be stored for the master password.
+<br/><br/>
+Don't forget, you can <a href="passwordmaker-online.zip">download</a> this page and its dependencies as a zip archive to run from your local hard drive.
+</p>
+</td></tr>
+</table>
+
+</form>

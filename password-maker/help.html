@@ -1,0 +1,209 @@
+    <script type="text/javascript" src="l33t.js">
+    </script>
+    <script type="text/javascript">
+      function changel33t()
+      {
+        var parent = document.getElementById("l33t-result");
+        var oldChild = document.getElementById("child");
+        var newChild = document.createElement("div");
+        newChild.setAttribute("id", "child");
+        var l33tLevel = document.getElementById("l33t-level").options[document.getElementById("l33t-level").options.selectedIndex].value;
+        var l33t = document.createTextNode(convertToL33t(l33tLevel, "The quick brown fox jumps over a lazy dog"));
+        newChild.appendChild(l33t);
+        parent.replaceChild(newChild, oldChild);
+      }
+    </script>
+
+      <p>&nbsp;</p>
+      <table width="700" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td>
+            <h1>PasswordMaker - Help</h1>
+	        </td>
+      	</tr>
+
+        <tr>
+	  <td>
+
+        <tr>
+	  <td>
+            <h2>What is PasswordMaker?</h2>
+      	  </td>
+      	</tr>
+
+      	<tr>
+	        <td>
+            <table style="margin-left: 4em" border="0">
+        		  <tr>
+        		    <td>
+                  See <a href="http://passwordmaker.mozdev.org/">here</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+
+	<tr><td><p/></td></tr>
+        <tr>
+	        <td>
+            <h2>PasswordMaker Options</h2>
+      	  </td>
+      	</tr>
+      	<tr>
+	        <td>
+            <table style="margin-left: 4em" border="0" cellpadding="0" cellspacing="0">
+        		  <tr>
+        		    <td>
+          		    <a name="master-password"><p style="font-weight: bold">Master Password</p></a>
+          		  </td>
+          		  <td>
+          		    <p style="margin-left: 4em">A single, unencrypted password which, when concatenated with the <b>URL</b> textbox, becomes the message from which an unique password is generated.</p>
+          		  </td>
+        	  	</tr>
+          		<tr>
+          		  <td>
+          		    <a name="save-master-password"><p style="font-weight: bold">Save Master Password</p></a>
+        		  </td>
+		          <td>
+        		    <p style="margin-left: 4em">If checked, the password you entered in the <b>Master Password</b> textbox will be stored (in an encrypted fashion) on the local hard drive. The next time you use <a href="http://passwordmaker.mozdev.org/">PasswordMaker</a>, the <b>Master Password</b> textbox will automatically be pre-populated with the last value it contained.</p>
+        		  </td>
+			  </tr>
+
+			  <tr>
+			    <td>
+			      <a name="use-l33t"><p style="font-weight: bold">Use l33t</p></a>
+			    </td>
+			    <td>
+			      <p style="margin-left: 4em">Specifies when to apply <a href="http://en.wikipedia.org/wiki/Leet">l33t</a> (also known as leetspeak), if at all. <a href="http://en.wikipedia.org/wiki/Leet">l33t</a> can be applied not at all, to the unencrypted master password and URL only (i.e., <i>before</i> the hashing function has been applied), to the generated password only (i.e., <i>after</i> the hashing function has been applied), or to both the unencrypted master password and URL as well as the generated password (i.e., <i>before and after</i> applying the hashing function.</p>
+			   </td>
+			  </tr>
+
+			  <tr>
+			    <td>
+			      <a name="l33t-level"><p style="font-weight: bold">l33t Level</p></a>
+			    </td>
+			    <td>
+			      <p style="margin-left: 4em">The complexity of <a href="http://en.wikipedia.org/wiki/Leet">l33t</a> (also known as leetspeak) applied after the encrypted password has been generated. A side-effect of using l33t (in this version of <a href="http://passwordmaker.mozdev.org/">PasswordMaker</a>) is that all upper-case characters are converted to lower-case. You can use the following <a href="http://en.wikipedia.org/wiki/Leet">l33t</a> tool to see how each <a href="http://en.wikipedia.org/wiki/Leet">l33t</a> level affects normal English text:</p>
+			   </td>
+			  </tr>
+			  <tr>
+			    <td>&nbsp;&nbsp;&nbsp;</td>
+				  <td>
+			      <p style="margin-left: 4em">Select l33t level:
+				<select style="font-size: x-small" id="l33t-level" onchange="changel33t();">
+				  <option value="-1">None (off)</option>
+				  <option value="0">1</option>
+				  <option value="1">2</option>
+				  <option value="2">3</option>
+				  <option value="3">4</option>
+				  <option value="4">5</option>
+				  <option value="5">6</option>
+				  <option value="6">7</option>
+				  <option value="7">8</option>
+				  <option value="8">9</option>
+				</select><div style="margin-left: 4em" id="l33t-result"><div id="child">The quick brown fox jumps over a lazy dog</div></div>
+			      </p>
+			    </td>
+			  </tr>
+
+        		<tr>
+        		  <td>
+  		          <a name="hash-algorithm"><p style="font-weight: bold">Hash Algorithm</p></a>
+        		  </td>
+		          <td>
+        		    <p style="margin-left: 4em">From this list, the encyrption method used to generate passwords can be selected. All algorithms are <a href="http://en.wikipedia.org/wiki/Cryptographic_hash_function">one-way hash functions</a>, also known as <a href="http://en.wikipedia.org/wiki/Cryptographic_hash_function">message digests</a> and <a href="http://en.wikipedia.org/wiki/Cryptographic_hash_function">fingerprints</a>.</p>
+        		  </td>
+        		</tr>
+        		<tr>
+        		  <td>
+		            <a name="url-components"><p style="font-weight: bold">URL Components</p></a>
+        		  </td>
+      	  	  <td>
+  		          <p style="margin-left: 4em">These checkboxes enable you to easily select which parts of the current <a href="http://en.wikipedia.org/wiki/URL">URL</a> should be included in the <b>URL</b> textbox. You don't have to use these checkboxes at all; you can simply type the <a href="http://en.wikipedia.org/wiki/URL">URL</a> you like directly into the <b>URL</b> textbox. We recommend <font color="red">only</font> using the domain portion of a <a href="http://en.wikipedia.org/wiki/URL">URL</a> because the rest of the <a href="http://en.wikipedia.org/wiki/URL">URL</a> is subject to change by whomever owns the site you are using. Even the protocol may change from http:// to https://, or vice-versa. The only time you should consider using another part of the <a href="http://en.wikipedia.org/wiki/URL">URL</a> is when two or more passwords are needed for the same domain; i.e., the site does not implement <a href="http://en.wikipedia.org/wiki/Single_signon">single sign-on</a> authentication for its various applications.</p>
+       		   </td>
+      	  	</tr>
+        		<tr>
+              <td></td>
+        		  <td>
+                <table style="margin-left: 4em" border="0" cellpadding="0" cellspacing="0">
+        		      <tr>
+		                <td>
+                      <p style="font-weight: bold">Protocol</p>
+			              </td>
+                    <td>
+                      <p style="margin-left: 4em">When checked, the protocol portion of the current <a href="http://en.wikipedia.org/wiki/URL">URL</a> is included in the <b>URL</b> textbox. In the <a href="http://en.wikipedia.org/wiki/URL">URL</a> http://foo.bar.mozilla.org:8080/this/is/the/path.html#anchoraway?lang=en&amp;id=123, <a href="http://passwordmaker.mozdev.org/">PasswordMaker</a> considers <i>http://</i> the protocol.</p>
+                    </td>
+      		        </tr>
+        		      <tr>
+		                <td>
+                      <p style="font-weight: bold">Subdomain(s)</p>
+			              </td>
+                    <td>
+                      <p style="margin-left: 4em">When checked, all subdomains of the current <a href="http://en.wikipedia.org/wiki/URL">URL</a> -- if any -- are included in the <b>URL</b> textbox. In the <a href="http://en.wikipedia.org/wiki/URL">URL</a> http://foo.bar.mozilla.org:8080/this/is/the/path.html#anchoraway?lang=en&amp;id=123, <a href="http://passwordmaker.mozdev.org/">PasswordMaker</a> considers <i>foo.bar</i> the subdomains.</p>
+                    </td>
+      		        </tr>
+        		      <tr>
+		                <td>
+                      <p style="font-weight: bold">Domain</p>
+			              </td>
+                    <td>
+                      <p style="margin-left: 4em">When checked, the domain of the current <a href="http://en.wikipedia.org/wiki/URL">URL</a> is included in the <b>URL</b> textbox. In the <a href="http://en.wikipedia.org/wiki/URL">URL</a> http://foo.bar.mozilla.org:8080/this/is/the/path.html#anchoraway?lang=en&amp;id=123, <a href="http://passwordmaker.mozdev.org/">PasswordMaker</a> considers <i>mozilla.org</i> the domain.</p>
+                    </td>
+      		        </tr>
+        		      <tr>
+		                <td>
+                      <p style="font-weight: bold">Port, path, anchor, query parameters</p>
+			              </td>
+                    <td>
+                      <p style="margin-left: 4em">When checked, the port, path, anchor, and query parameters  -- if any -- of the current <a href="http://en.wikipedia.org/wiki/URL">URL</a> are included in the <b>URL</b> textbox. In the <a href="http://en.wikipedia.org/wiki/URL">URL</a> http://foo.bar.mozilla.org:8080/this/is/the/path.html#anchoraway?lang=en&amp;id=123, <a href="http://passwordmaker.mozdev.org/">PasswordMaker</a> considers <i>:8080/this/is/the/path.html#anchoraway?lang=en&amp;id=123</i> the port, path, anchor, anf query parameters.</p>
+                    </td>
+      		        </tr>
+                </table>
+      		  </td>
+      		</tr>
+          <tr>
+            <td>
+              <a name="url"><p style="font-weight: bold">URL</p></a>
+            </td>
+            <td>
+              <p style="margin-left: 4em">The <a href="http://en.wikipedia.org/wiki/URL">URL</a> which, when concatenated with the <b>Master Password</b> textbox, becomes the message from which an unique password is generated. We recommend <font color="red">only</font> using the domain portion of a <a href="http://en.wikipedia.org/wiki/URL">URL</a> because the rest of the <a href="http://en.wikipedia.org/wiki/URL">URL</a> is subject to change by whomever owns the site you are using. Even the protocol may change from http:// to https://, or vice-versa. The only time you should consider using another part of the <a href="http://en.wikipedia.org/wiki/URL">URL</a> is when two or more passwords are needed for the same domain; i.e., the site does not implement <a href="http://en.wikipedia.org/wiki/Single_signon">single sign-on</a> authentication for its various applications.</p>
+           </td>
+          </tr>
+          <tr>
+            <td>
+              <a name="length-of-generated-password"><p style="font-weight: bold">Length of Generated Password</p></a>
+            </td>
+            <td>
+              <p style="margin-left: 4em">Here you specify the length, in characters, for the generated password.</p>
+           </td>
+          </tr>
+          <tr>
+            <td>
+              <a name="generated-password"><p style="font-weight: bold">Generated Password</p></a>
+            </td>
+            <td>
+              <p style="margin-left: 4em">This textbox displays the generated password.</p>
+           </td>
+          </tr>
+          <tr>
+            <td>
+              <a name="copy-to-clipboard"><p style="font-weight: bold">Copy to Clipboard</p></a>
+            </td>
+            <td>
+              <p style="margin-left: 4em">Copies the contents of the <b>Generated Password</b> textbox to the <a href="http://en.wikipedia.org/wiki/Clipboard">clipboard</a> (not available in the on-line version).</p>
+           </td>
+          </tr>
+          <tr>
+            <td>
+              <a name="help"><p style="font-weight: bold">Help</p></a>
+            </td>
+            <td>
+              <p style="margin-left: 4em">Displays this information.</p>
+           </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
