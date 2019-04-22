@@ -1,2 +1,4 @@
 name: moret.pro.br
+title: moret.pro.br
 markdown: kramdown
+permalink: /blog/:year-:month-:day-:title/
