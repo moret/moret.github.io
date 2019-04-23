@@ -65,9 +65,9 @@ p, ul {
   width: 100%;
 }
 
-#sidebar a:hover {
-	color: #2aa198;
-	background-color: #eee8d5;
+.post-card {
+  display: block;
+  text-decoration: none;
 }
 
 code {

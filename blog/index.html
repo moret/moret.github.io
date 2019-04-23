@@ -1,0 +1,18 @@
+---
+layout: home
+title: moret.pro.br
+---
+{% for post in site.posts %}
+<a class="post-card" href="{{ post.url }}">
+  <img id="mini-poster" src="/assets/{{ post.poster }}" />
+  <div>
+    {{ post.title }}
+  </div>
+  <div>
+    {{ post.date | date: "%Y-%m-%d" }}
+  </div>
+  <div>
+    {{ post.subtitle }}
+  </div>
+</a>
+{% endfor %}
