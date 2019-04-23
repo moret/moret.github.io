@@ -43,7 +43,7 @@ blockquote {
 	border-color: #cb4b16;
 }
 
-p {
+p, ul {
   line-height: 1.6em;
 }
 
