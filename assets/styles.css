@@ -5,7 +5,8 @@ html {
 }
 
 body {
-  color: #839496;
+  color: #657b83;
+  font-size: 1.1em;
   margin: 0 auto;
   max-width: 740px;
 }
@@ -43,12 +44,12 @@ blockquote {
 }
 
 p {
-  line-height: 1.5em;
+  line-height: 1.6em;
 }
 
 #home {
   display: block;
-  font-size: large;
+  font-size: larger;
   margin: 0 0 1em;
 }
 
@@ -67,10 +68,6 @@ p {
 #sidebar a:hover {
 	color: #2aa198;
 	background-color: #eee8d5;
-}
-
-footer {
-	border-color: #eee8d5;
 }
 
 code {
